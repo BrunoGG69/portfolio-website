@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .input {
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+  }
+}
+
+@layer utilities {
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+
+  .padding-x {
+    @apply sm:px-16 px-8;
+  }
+
+  .padding-y {
+    @apply sm:py-24 py-12;
+  }
+
+  .padding-l {
+    @apply sm:pl-16 pl-8;
+  }
+
+  .padding-r {
+    @apply sm:pr-16 pr-8;
+  }
+
+  .padding-t {
+    @apply sm:pt-24 pt-12;
+  }
+
+  .padding-b {
+    @apply sm:pb-24 pb-12;
+  }
+
+  .info-text {
+    @apply font-montserrat text-slate-gray text-lg leading-7;
+  }
+
+  .neon-blue {
+    color: #5fc5bc;
+    text-shadow: 0 0 3px #5dc5bc, 0 0 8px #5dc5bc;
+  }
+
+  .neon-orange {
+    color: #fc9170;
+    text-shadow: 0 0 4px #fc9170, 0 0 8px #fc9170;
+  }
+
+  .neon-white {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 8px #ffffff;
+  }
+
+
+
+}
+
+.rise-up {
+  opacity: 0;                    /* Make the element invisible initially */
+  visibility: hidden;            /* Ensure it is not interactable */
+  animation: rise-up 1s ease-out forwards;
+}
+
+@keyframes rise-up {
+  0% {
+    transform: translateY(50px);  /* Starts from below the initial position */
+    opacity: 0;                   /* Fully invisible at the start */
+    visibility: hidden;           /* Hidden at the start */
+  }
+  100% {
+    transform: translateY(0);     /* Ends at the normal position */
+    opacity: 1;                   /* Fully visible at the end */
+    visibility: visible;          /* Visible at the end */
+  }
+}
+
+/* Global CSS (e.g., in your styles.css or in Tailwind configuration) */
+
+@keyframes blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px); /* Start with a strong blur */
+    visibility: hidden;           /* Hidden at the start */
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0); /* End with no blur */
+  }
+}
+
+.blur-in {
+  animation: blur-in 1s ease-out forwards; /* Delay of 1 second */
+}
+
+
+
