@@ -2,9 +2,9 @@ import profilePic from "../assets/profilePic-noBackground.png";
 
 const Hero = () => {
     return (
-        <div id = "hero" className="bg-transparent text-white flex items-center justify-between min-h-screen overflow-x-hidden">
-            <div className="flex flex-col lg:flex-row items-center text-center lg:text-left w-full">
-                <div className="flex flex-col text-center font-jetbrains p-8 lg:pl-64 w-full">
+        <div id = "hero" className="bg-transparent text-white flex items-center justify-between min-h-screen overflow-x-hidden flex-nowrap">
+            <div className="flex flex-col xl:flex-row items-center text-center lg:text-left w-full">
+                <div className="flex flex-col text-center font-jetbrains p-8 xl:pl-64 w-full">
                     {/* Name Section */}
                     <h1 className="text-8xl max-lg:text-6xl max-sm:text-4xl font-bold neon-blue rise-up" >
                         &lt;BrunoGG&gt;
@@ -54,7 +54,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="flex-shrink-0 rise-up items-center justify-center" style={{ animationDelay: '0.5s' }}>
-                    <img src={profilePic} alt="" className="p-8 lg:pr-64 w-full max-sm:w-[400px]" />
+                    <img src={profilePic} alt="" className="p-8 xl:pr-64 w-full max-xl:w-[400px]" />
                 </div>
             </div>
         </div>
