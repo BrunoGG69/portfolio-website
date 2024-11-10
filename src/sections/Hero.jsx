@@ -30,6 +30,8 @@ const Hero = () => {
                             <span>BrunoGG69</span>
                         </a>
 
+                        <span> / </span>
+
                         {/* Discord Icon */}
                         <a href="#" className="flex items-center space-x-1">
                             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -38,6 +40,8 @@ const Hero = () => {
                             </svg>
                             <span>brunogg69</span>
                         </a>
+
+                        <span> / </span>
 
                         {/* Twitter Icon */}
                         <a href="https://twitter.com/BrunoGG69" className="flex items-center space-x-1">
@@ -50,7 +54,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className="flex-shrink-0 rise-up" style={{ animationDelay: '0.5s' }}>
-                    <img src={profilePic} className="p-10" />
+                    <img src={profilePic} alt = "" className="p-10" />
                 </div>
             </div>
         </div>
