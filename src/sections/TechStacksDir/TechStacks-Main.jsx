@@ -1,4 +1,4 @@
-const TechStacks = () => {
+const TechStacksMain = () => {
     return (
         <div>
             <h1>Tech Stacks</h1>
@@ -6,4 +6,4 @@ const TechStacks = () => {
     );
 };
 
-export default TechStacks;
+export default TechStacksMain;

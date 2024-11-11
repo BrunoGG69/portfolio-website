@@ -1,11 +1,13 @@
-import Hero from "./Hero.jsx";
-import TechStacks from "./TechStacks.jsx";
-import Projects from "./Projects.jsx";
-import ContactMe from "./ContactMe.jsx";
+import HeroMain from "./HeroDir/Hero-Main.jsx";
+import TechStacksMain from "./TechStacksDir/TechStacks-Main.jsx";
+import ProjectsMain from "./ProjectsDir/Projects-Main.jsx";
+import ContactMeMain from "./ContactMeDir/ContactMe-Main.jsx";
+import AboutMeMain from "./AboutMeDir/AboutMe-Main.jsx";
 
 export {
-    Hero,
-    TechStacks,
-    Projects,
-    ContactMe
+    HeroMain,
+    TechStacksMain,
+    ProjectsMain,
+    ContactMeMain,
+    AboutMeMain,
 };

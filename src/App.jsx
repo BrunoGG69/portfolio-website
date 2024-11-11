@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Hero, TechStacks, Projects, ContactMe } from './sections';
+import { HeroMain, TechStacksMain, ProjectsMain, ContactMeMain, AboutMeMain } from './sections';
 import { Nav } from './components';
 
 const App = () => {
@@ -68,16 +68,19 @@ const App = () => {
             {/* Navigation and Sections */}
             <Nav />
             <section className="xl:padding-1 wide:padding-r padding-b">
-                <Hero />
+                <HeroMain />
             </section>
             <section className="padding">
-                <TechStacks />
+                <AboutMeMain />
             </section>
             <section className="padding">
-                <Projects />
+                <TechStacksMain />
             </section>
             <section className="padding">
-                <ContactMe />
+                <ProjectsMain />
+            </section>
+            <section className="padding">
+                <ContactMeMain />
             </section>
         </main>
     );
