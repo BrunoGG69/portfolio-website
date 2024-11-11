@@ -18,7 +18,7 @@ const Nav = () => {
     };
 
     return (
-        <div className="navbar fixed top-0 left-0 right-0 z-10 bg-[#15141d] flex justify-between items-center px-4">
+        <div className="navbar relative top-0 left-0 right-0 z-10 bg-transparent flex justify-between items-center px-4">
             <div className="flex items-center btn btn-ghost blur-in">
                 <a
                     ref={brunoButtonRef}
