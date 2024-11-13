@@ -1,7 +1,6 @@
 import HeroText from "./Hero-Text.jsx";
 import HeroProfilePic from "./Hero-ProfilePic.jsx";
 
-
 const HeroMain = () => {
     return (
         <div id="hero" className="bg-transparent text-white flex items-center justify-center min-h-screen overflow-x-hidden">

@@ -71,7 +71,10 @@
     text-shadow: 0 0 5px #ffffff, 0 0 8px #ffffff;
   }
 
-
+  .tech-card.blurred {
+    filter: blur(10px);
+    transition: filter 0.1s ease-in-out;
+  }
 
 }
 
@@ -110,6 +113,38 @@
 
 .blur-in {
   animation: blur-in 1s ease-out forwards; /* Delay of 1 second */
+}
+
+
+@keyframes loop-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+/* CSS for Continuous Scrolling */
+.scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: scroll-animation 20s linear infinite; /* Adjust duration as needed */
+}
+
+.scroll-container img {
+  margin-right: 2rem; /* Adjust space between icons */
+}
+
+/* Define the continuous scroll animation */
+@keyframes scroll-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3)); /* Scroll the width of half the container */
+  }
 }
 
 
