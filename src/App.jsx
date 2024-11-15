@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { HeroMain, TechStacksMain, ProjectsMain, ContactMeMain, AboutMeMain } from './sections';
+import { HeroMain, TechStacksMain, ProjectsMain, ContactMeMain, AboutMeMain, FooterMain} from './sections';
 import { Nav } from './components';
 
 const App = () => {
@@ -25,27 +25,32 @@ const App = () => {
     }, []);
 
     return (
-        <main className="relative overflow-hidden">
+        <main className="relative overflow-hidden ">
             <div id="particles-js" className="absolute inset-0 bg-[#15151b] -z-10"></div>
-            <Nav />
-            <div className="flex flex-col">
+            <Nav/>
+            <div className="flex flex-col font-jetbrains">
                 <section className="xl:padding-1 wide:padding-r padding-b">
-                    <HeroMain />
+                    <HeroMain/>
                 </section>
                 {/*<section className="padding">*/}
                 {/*    <AboutMeMain />*/}
                 {/*</section>*/}
                 <section className="padding bg-[#15151b]">
-                    <TechStacksMain />
+                    <TechStacksMain/>
                 </section>
                 <section className="padding">
-                    <ProjectsMain />
+                    <ProjectsMain/>
                 </section>
                 <section className="padding">
-                    <ContactMeMain />
+                    <ContactMeMain/>
+                </section>
+                <section className="border-none">
+                    <FooterMain/>
                 </section>
             </div>
+
         </main>
+
     );
 };
 
