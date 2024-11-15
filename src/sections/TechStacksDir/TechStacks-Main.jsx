@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import arduinoIcon from '../../assets/logos/arduino.svg';
 import awsIcon from '../../assets/logos/aws.svg';
 import cppIcon from '../../assets/logos/c++.svg';
@@ -15,23 +15,21 @@ import jsIcon from '../../assets/logos/js.svg';
 import linuxIcon from '../../assets/logos/linux.svg';
 import nodejsIcon from '../../assets/logos/nodejs.svg';
 import npmIcon from '../../assets/logos/npm.svg';
-import phpIcon from '../../assets/logos/php.svg';
-import portainerIcon from '../../assets/logos/portainer.svg';
 import pycharmIcon from '../../assets/logos/pycharm.svg';
 import pythonIcon from '../../assets/logos/python.svg';
 import raspberryIcon from '../../assets/logos/raspberry.svg';
-import vercelIcon from '../../assets/logos/vercel.svg';
 import vscodeIcon from '../../assets/logos/vscode.svg';
 import webstormIcon from '../../assets/logos/webstorm.svg';
 import windowsIcon from '../../assets/logos/windows.svg';
 import tailwindIcon from '../../assets/logos/tailwindcss.svg';
 import reactIcon from '../../assets/logos/react.svg';
+import homeassisant from '../../assets/logos/homeassistant.svg';
 
 const icons = [
-    arduinoIcon, cppIcon, pythonIcon, pycharmIcon, jsIcon, reactIcon,
+    arduinoIcon, cppIcon, pythonIcon, pycharmIcon, jsIcon, webstormIcon, reactIcon,
     tailwindIcon, htmlIcon, cssIcon, npmIcon, nodejsIcon, awsIcon, dockerIcon,
     gcloudIcon, firebaseIcon, githubIcon, gitIcon, linuxIcon, raspberryIcon,
-    figmaIcon, discordIcon, vscodeIcon, windowsIcon
+    figmaIcon, discordIcon, vscodeIcon, windowsIcon, homeassisant
 ];
 
 const TechStacksMain = () => {
@@ -41,7 +39,7 @@ const TechStacksMain = () => {
         const container = document.getElementById("scrollable-cards-container");
         const cardWidth = container.querySelector(".tech-card").offsetWidth;
         const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        container.scrollBy({left: scrollAmount, behavior: 'smooth'});
     };
 
     const handleScroll = () => {
@@ -101,7 +99,7 @@ const TechStacksMain = () => {
             <div className="relative w-full mt-8">
                 {/* Left Scroll Button */}
                 <div
-                    className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-10 ${scrollPosition === "start" ? "hidden" : ""}`}>
+                    className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-10 ${scrollPosition === "start:" ? "hidden" : ""}`}>
                     <button
                         onClick={() => scroll("left")}
                         className="bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-600 focus:outline-none ">
@@ -126,7 +124,7 @@ const TechStacksMain = () => {
                                  alt="Python Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Language:</span>
                                 <span className="text-[#0295ec]"> Python</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -158,9 +156,9 @@ const TechStacksMain = () => {
                                  alt="C++ Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Language:</span>
-                                <span className = "text-[#00a6fd]"> C++</span></h2>
+                                <span className="text-[#00a6fd]"> C++</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
                                 <li><span>Features: </span><span className="text-white">High-Performance, General-Purpose Programming Language</span>
                                 </li>
@@ -191,7 +189,7 @@ const TechStacksMain = () => {
                                  alt="JavaScript Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Language:</span>
                                 <span className="text-[#ffff25]"> JavaScript</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -223,7 +221,7 @@ const TechStacksMain = () => {
                                  alt="React Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Platform:</span> <span
                                 style={{color: "#61DAFB"}}>React</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -255,7 +253,7 @@ const TechStacksMain = () => {
                                  alt="Tailwind CSS Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Framework:</span>
                                 <span className="text-[#00d7f1]"> TailwindCSS</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -287,7 +285,7 @@ const TechStacksMain = () => {
                                  alt="HTML Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Language:</span>
                                 <span className="text-[#ff8800]"> HTML</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -319,7 +317,7 @@ const TechStacksMain = () => {
                                  alt="CSS Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Language:</span>
                                 <span className="text-[#04c2ff]"> CSS</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -351,7 +349,7 @@ const TechStacksMain = () => {
                                  alt="Arduino Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Platform:</span>
                                 <span className="text-[#00bbaa]"> Arduino</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -384,7 +382,7 @@ const TechStacksMain = () => {
                                  alt="Docker Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Platform:</span> <span
                                 style={{color: "#0db7ed"}}>Docker</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
@@ -416,7 +414,7 @@ const TechStacksMain = () => {
                                  alt="Firebase Logo"/>
                         </div>
                         <hr className="my-4 border-gray-600"/>
-                        <div className="font-jetbrains overflow-hidden flex-grow">
+                        <div className=" overflow-hidden flex-grow">
                             <h2 className="text-xl"><span className="font-bold underline">Platform:</span> <span
                                 style={{color: "#FFCA28"}}>Firebase</span></h2>
                             <ul className="text-[#ffc107] mt-2 space-y-1">
