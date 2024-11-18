@@ -1,24 +1,5 @@
 import profilePic from "../../assets/profilePic-noBackground.png";
-
-const socialLinks = [
-    {
-        href: "https://github.com/BrunoGG69",
-        icon: "bxl-github",
-        label: "BrunoGG69"
-    },
-
-    {
-        href: "https://discordapp.com/users/785186372369252372",
-        icon: "bxl-discord-alt",
-        label: "brunogg69"
-    },
-    {
-        href: "https://twitter.com/BrunoGG69",
-        icon: "bxl-twitter",
-        label: "@BrunoGG69"
-    },
-
-];
+import { socialLinks } from "../../constants/index.js";
 
 const FooterMain = () => {
     return (
