@@ -17,7 +17,7 @@ const App = () => {
             },
             interactivity: {
                 detect_on: 'canvas',
-                events: { onHover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
                 modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, repulse: { distance: 200 } },
             },
             retina_detect: true,
