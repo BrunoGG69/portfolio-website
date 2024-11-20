@@ -37,48 +37,37 @@ const AboutMeMain = () => {
                 <div className="flex flex-col text-white pt-10 text-xl">
                     <p className="gap-y-5 text-sm sm:text-lg lg:text-xl">
                         <span>
-                            <span>I am a High Schooler </span>
-                            <span>
-                                (Class {11 + (new Date().getMonth() >= 2 ? new Date().getFullYear() - 2024 : new Date().getFullYear() - 2024)}th)
+                            <span>I am a </span>
+                            <span className="text-[#5ec6bb]">
+                                Class {11 + (new Date().getMonth() >= 2 ? new Date().getFullYear() - 2024 : new Date().getFullYear() - 2024)}th
                             </span>
-                            &nbsp;
-                            <span>
-                                Who Loves Technology. I am a
-                                <span className="text-[#fff109]"> Python</span>,
-                                <span className="text-[#00a7ff]"> C++</span>,
-                                <span className="text-[#6198e2]"> React</span>,
-                                <span className="text-[#ff6500]"> HTML</span>, and
-                                <span className="text-[#04c2ff]"> CSS</span> coder —
-                                and also enjoy modeling in 3D when I have some new design ideas.
-                            </span>
+                            <span> student who enjoys tinkering and experimenting with technology.</span>
                         </span>
                         <br/>
                         <p className="pt-5">
                             <span>
-                                I have also played around with the <a href = "#homeassistant" className = "font-bold underline ">Internet of Things</a> in
-                                which I automated my room by making it smart, connected
-                                where all the tasks can be performed and control seamlessly.
+                                I have a passion for software and web development, with skills in Python, JavaScript, C++, HTML, CSS, and ReactJS.
                             </span>
                         </p>
                         <br/>
                         <p>
                             <span>
-                                As a <a href = "#arduino" className = "font-bold underline ">Robotics Enthusiast</a>, I aim to integrate my software
-                                knowledge with my hardware one
+                                I am also a <a href="#techStacks" className="font-bold underline">Robotics Enthusiast</a>, aiming to integrate my software knowledge with hardware.
+                            </span>
+                        </p>
+                        <p className="pt-5">
+                            <span>
+                                My laziness led me to convert my room into a smart room, controlled with just a touch of a button with automations that would make anyone's life easier.
                             </span>
                         </p>
                         <br/>
                         <p>
                             <span className="font-bold underline text-lg sm:text-xl lg:text-2xl">
-                                I take things apart! because I want to know how they work,
-                                my motto is "If it ain't broke, I'm going to mess with it anyway!"
+                                I love taking things apart to understand how they work. My motto is, "If it ain't broke, I'm going to mess with it anyway!"
                             </span>
                         </p>
-
-
                     </p>
                 </div>
-
             </div>
         </div>
     );

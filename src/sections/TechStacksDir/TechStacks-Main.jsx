@@ -74,7 +74,7 @@ const TechStacksMain = () => {
     }, []);
 
     return (
-        <div className="text-white items-center flex flex-col min-h-screen justify-center overflow-hidden relative">
+        <div id = "techStacks" className="text-white items-center flex flex-col min-h-screen justify-center overflow-hidden relative">
 
             {/* Heading */}
             <div className="flex flex-col items-center justify-center pb-10">
