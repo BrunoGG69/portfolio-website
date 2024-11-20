@@ -1,10 +1,18 @@
+/* ----------------------------------------
+   Import Fonts
+---------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
 
+/* ----------------------------------------
+   Tailwind CSS Setup
+---------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ----------------------------------------
+   Global Styles
+---------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +20,9 @@
   scroll-behavior: smooth;
 }
 
+/* ----------------------------------------
+   Component Styles
+---------------------------------------- */
 @layer components {
   .max-container {
     max-width: 1440px;
@@ -19,11 +30,17 @@
   }
 
   .input {
-    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5
+    max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray
+    max-sm:rounded-full;
   }
 }
 
+/* ----------------------------------------
+   Utility Classes
+---------------------------------------- */
 @layer utilities {
+  /* Padding Utilities */
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;
   }
@@ -52,10 +69,12 @@
     @apply sm:pb-24 pb-12;
   }
 
+  /* Text Utilities */
   .info-text {
     @apply font-montserrat text-slate-gray text-lg leading-7;
   }
 
+  /* Neon Effects */
   .neon-blue {
     color: #5fc5bc;
     text-shadow: 0 0 3px #5dc5bc, 0 0 8px #5dc5bc;
@@ -71,51 +90,75 @@
     text-shadow: 0 0 5px #ffffff, 0 0 8px #ffffff;
   }
 
+  /* Blur Effects */
   .tech-card.blurred {
     filter: blur(10px);
     transition: filter 0.1s ease-in-out;
   }
-
 }
 
+/* ----------------------------------------
+   Animations
+---------------------------------------- */
+
+/* Rise-Up Animation */
 .rise-up {
-  opacity: 0;                    /* Make the element invisible initially */
-  visibility: hidden;            /* Ensure it is not interactable */
+  opacity: 0;
+  visibility: hidden;
   animation: rise-up 1s ease-out forwards;
 }
 
 @keyframes rise-up {
   0% {
-    transform: translateY(50px);  /* Starts from below the initial position */
-    opacity: 0;                   /* Fully invisible at the start */
-    visibility: hidden;           /* Hidden at the start */
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
   }
   100% {
-    transform: translateY(0);     /* Ends at the normal position */
-    opacity: 1;                   /* Fully visible at the end */
-    visibility: visible;          /* Visible at the end */
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 
-/* Global CSS (e.g., in your styles.css or in Tailwind configuration) */
+/* Rise-Down Animation */
+.rise-down {
+  opacity: 0;
+  visibility: hidden;
+  animation: rise-down 1s ease-out forwards;
+}
+
+@keyframes rise-down {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Blur-In Animation */
+.blur-in {
+  animation: blur-in 1s ease-out forwards;
+}
 
 @keyframes blur-in {
   0% {
     opacity: 0;
-    filter: blur(10px); /* Start with a strong blur */
-    visibility: hidden;           /* Hidden at the start */
+    filter: blur(10px);
+    visibility: hidden;
   }
   100% {
     opacity: 1;
-    filter: blur(0); /* End with no blur */
+    filter: blur(0);
   }
 }
 
-.blur-in {
-  animation: blur-in 1s ease-out forwards; /* Delay of 1 second */
-}
-
-
+/* Loop Scroll Animation */
 @keyframes loop-scroll {
   0% {
     transform: translateX(0);
@@ -125,30 +168,25 @@
   }
 }
 
-/* CSS for Continuous Scrolling */
+/* ----------------------------------------
+   Continuous Scrolling
+---------------------------------------- */
 .scroll-container {
   display: flex;
   flex-wrap: nowrap;
   width: max-content;
-  animation: scroll-animation 20s linear infinite; /* Adjust duration as needed */
+  animation: scroll-animation 20s linear infinite;
 }
 
 .scroll-container img {
-  margin-right: 2rem; /* Adjust space between icons */
+  margin-right: 2rem;
 }
 
-/* Define the continuous scroll animation */
 @keyframes scroll-animation {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% / 3)); /* Scroll the width of half the container */
+    transform: translateX(calc(-100% / 3));
   }
 }
-
-
-
-
-
-

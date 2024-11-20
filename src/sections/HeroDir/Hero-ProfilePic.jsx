@@ -1,16 +1,23 @@
 import profilePic from "../../assets/profilePic-noBackground.png";
+import {motion} from "motion/react";
 
 const HeroProfilePic = () => {
     return (
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center rise-up"
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center"
              style={{animationDelay: '0.5s'}}>
-            <div className="z-10">
+            <motion.div
+                className="z-10"
+                whileHover={{
+                    scale: 1.1,
+                    transition: { duration: 0.2 },
+                }}
+            >
                 <img
                     src={profilePic}
                     alt="Profile Picture"
                     className="max-w-full h-auto"
                 />
-            </div>
+            </motion.div>
         </div>
     );
 };

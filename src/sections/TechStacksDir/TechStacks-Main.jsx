@@ -74,7 +74,7 @@ const TechStacksMain = () => {
     }, []);
 
     return (
-        <div className="text-white items-center flex flex-col overflow-hidden relative">
+        <div className="text-white items-center flex flex-col min-h-screen justify-center overflow-hidden relative">
 
             {/* Heading */}
             <div className="flex flex-col items-center justify-center pb-10">
@@ -117,7 +117,7 @@ const TechStacksMain = () => {
 
                     {techData.map((tech) => (
                         <div
-                            key={tech.id}
+                            id={tech.id}
                             className="tech-card bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#000000] flex-1 min-w-[300px] mx-auto p-4 rounded-xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform hover:brightness-125 min-h-[400px] flex flex-col justify-between snap-start"
                         >
                             <div className="relative flex justify-center items-center mb-4">

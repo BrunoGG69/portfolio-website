@@ -1,5 +1,13 @@
 import { useEffect } from 'react';
-import { HeroMain, TechStacksMain, ProjectsMain, ContactMeMain, AboutMeMain, FooterMain} from './sections';
+import { motion } from 'motion/react'; // Import Framer Motion
+import {
+    HeroMain,
+    TechStacksMain,
+    ProjectsMain,
+    ContactMeMain,
+    AboutMeMain,
+    FooterMain,
+} from './sections';
 import { Nav } from './components';
 
 const App = () => {
@@ -17,7 +25,11 @@ const App = () => {
             },
             interactivity: {
                 detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true,
+                },
                 modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, repulse: { distance: 200 } },
             },
             retina_detect: true,
@@ -25,32 +37,78 @@ const App = () => {
     }, []);
 
     return (
-        <main className="relative overflow-hidden ">
+        <main className="relative overflow-hidden">
             <div id="particles-js" className="absolute inset-0 bg-[#15151b] -z-10"></div>
-            <Nav/>
+            <Nav />
             <div className="flex flex-col font-jetbrains">
-                <section className="xl:padding-1 wide:padding-r padding-b">
-                    <HeroMain/>
-                </section>
-                {/*<section className="padding">*/}
-                {/*    <AboutMeMain />*/}
-                {/*</section>*/}
-                <section className="padding bg-[#15151b]">
-                    <TechStacksMain/>
-                </section>
-                <section className="padding">
-                    <ProjectsMain/>
-                </section>
-                <section className="padding">
-                    <ContactMeMain/>
-                </section>
-                <section className="border-none">
-                    <FooterMain/>
-                </section>
+                {/* Hero Section */}
+                <motion.section
+                    className="xl:padding-1 wide:padding-r padding-b"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <HeroMain />
+                </motion.section>
+
+                {/* About Me Section */}
+                <motion.section
+                    className="padding"
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <AboutMeMain />
+                </motion.section>
+
+                {/* Tech Stacks Section */}
+                <motion.section
+                    className="padding"
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.5 }}
+                    viewport={{ once: true }}
+                >
+                    <TechStacksMain />
+                </motion.section>
+
+                {/* Projects Section */}
+                <motion.section
+                    className="padding"
+                    initial={{ opacity: 0, x: 500 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <ProjectsMain />
+                </motion.section>
+
+                {/* Contact Me Section */}
+                <motion.section
+                    className="padding"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <ContactMeMain />
+                </motion.section>
+
+                {/* Footer Section */}
+                <motion.section
+                    className="border-none"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <FooterMain />
+                </motion.section>
             </div>
-
         </main>
-
     );
 };
 

@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import profilePic from "../assets/profilePic-noBackground.png";
 import "boxicons";
+import { socialLinks } from "../constants/index.js";  // Import socialLinks
+import ReactTypingEffect from "react-typing-effect";
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);  // To handle the mobile dropdown menu
@@ -41,24 +43,14 @@ const Nav = () => {
             <div className="flex-none lg:block">  {/* For larger screens */}
                 {/* These buttons will be hidden on mobile */}
                 <ul className="menu menu-horizontal px-1 hidden lg:flex">
-                    <li>
-                        <div className="blur-in">
-                            <i className="bx bxl-github text-white"></i>
-                            <a href="https://github.com/BrunoGG69" target="_blank">Github</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="blur-in">
-                            <i className="bx bxl-twitter text-white"></i>
-                            <a href="https://twitter.com/BrunoGG69" target="_blank">Twitter</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="blur-in">
-                            <i className="bx bxl-discord-alt text-white"></i>
-                            <a href="https://discordapp.com/users/785186372369252372" target="_blank">Discord</a>
-                        </div>
-                    </li>
+                    {socialLinks.map(({ href, icon, label, id }) => (
+                        <li key={id}>
+                            <div className="blur-in">
+                                <i className={`${icon} text-white`}></i>
+                                <a href={href} target="_blank" rel="noopener noreferrer">{id}</a>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
 
@@ -72,24 +64,14 @@ const Nav = () => {
             {/* Mobile Menu */}
             <div className={`lg:hidden absolute top-16 right-4 bg-[#15141d] text-white p-4 rounded-lg ${isOpen ? 'block' : 'hidden'}`}>
                 <ul className="menu">
-                    <li>
-                        <div className="blur-in">
-                            <i className="bx bxl-github text-white"></i>
-                            <a href="https://github.com/BrunoGG69" target="_blank">Github</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="blur-in">
-                            <i className="bx bxl-twitter text-white"></i>
-                            <a href="https://twitter.com/BrunoGG69" target="_blank">Twitter</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="blur-in">
-                            <i className="bx bxl-discord-alt text-white"></i>
-                            <a href="https://discordapp.com/users/785186372369252372" target="_blank">Discord</a>
-                        </div>
-                    </li>
+                    {socialLinks.map(({ href, icon, label, id }) => (
+                        <li key={id}>
+                            <div className="rise-down">
+                                <i className={`${icon} text-white`}></i>
+                                <a href={href} target="_blank" rel="noopener noreferrer">{id}</a>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>

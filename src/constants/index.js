@@ -16,6 +16,12 @@ export const socialLinks = [
         href: "https://twitter.com/BrunoGG69",
         icon: "bx bxl-twitter",
         label: "@BrunoGG69"
+    },
+    {
+        id: "Email",
+        href: "mailto:contact@brunogg.in",
+        icon: "bx bx-envelope",
+        label: "contact@brunogg.in"
     }
 ];
 
