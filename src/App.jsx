@@ -87,15 +87,12 @@ const App = () => {
                 </motion.section>
 
                 {/* Contact Me Section */}
-                <motion.section
+                <section
                     className="padding"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
                 >
                     <ContactMeMain />
-                </motion.section>
+                </section>
 
                 {/* Footer Section */}
                 <motion.section
