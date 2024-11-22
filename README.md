@@ -15,8 +15,9 @@
 - CSS
 - JavaScript
 - Tailwind CSS
-- Framer Motion
+- Framer Motion (Animation)
 - React
+- DaisyUI (components)
 
 ## Features
 - Responsive design
