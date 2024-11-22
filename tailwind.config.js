@@ -2,19 +2,14 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}", // Your JS, TS, JSX, and TSX files
   ],
   theme: {
     extend: {
-
       fontFamily: {
-        jetbrains: ['"JetBrains Mono"', 'monospace'],
+        jetbrains: ['"JetBrains Mono"', "monospace"],
       },
-
     },
   },
-  plugins: [
-    require('daisyui'),
-  ],
-}
-
+  plugins: [require("daisyui")],
+};

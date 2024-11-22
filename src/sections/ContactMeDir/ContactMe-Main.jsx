@@ -56,19 +56,22 @@ const ContactMeMain = () => {
     }
   };
 
+  // Simplified motion props for better performance
+  const motionProps = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    transition: { duration: 0.4 }, // Reduce animation time
+    viewport: { once: true },
+  };
+
   return (
-    <div className="flex items-center justify-center px-2 md:px-4">
-      <motion.section
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-32 w-full lg:w-10/12"
-      >
-        <div className="flex flex-wrap">
-          <div className="w-full lg:w-6/12 lg:px-6 flex items-center justify-center">
+    <div className="flex items-center justify-center px-4 py-4">
+      <motion.section {...motionProps} className="w-full lg:w-10/12 mb-32">
+        <div className="flex flex-col lg:flex-row">
+          {/* Left Column: Text */}
+          <div className="w-full lg:w-6/12 px-6 mb-8 lg:mb-0 flex items-center justify-center">
             <div className="text-center">
-              <h3 className="text-6xl font-bold neon-blue">
+              <h3 className="text-4xl lg:text-6xl font-bold neon-blue">
                 &lt;Contact Me&gt;
               </h3>
               <p className="text-white mt-4">Fill out the form </p>
@@ -76,10 +79,12 @@ const ContactMeMain = () => {
             </div>
           </div>
 
-          <form className="w-full lg:w-6/12 lg:px-6" onSubmit={handleSubmit}>
+          {/* Right Column: Form */}
+          <form className="w-full lg:w-6/12 px-6" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
-              <div className="flex flex-row gap-5">
-                <div className="mb-3 w-full">
+              {/* Name & Phone Number */}
+              <div className="flex flex-col gap-5 sm:flex-row sm:gap-4">
+                <div className="w-full mb-3">
                   <label
                     className="block font-medium mb-[2px] text-[#fc9170]"
                     htmlFor="name"
@@ -94,28 +99,19 @@ const ContactMeMain = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    whileHover={{
-                      borderColor: "white", // Border color turns white on hover
-                      boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)", // Adds a glowing effect
-                    }}
-                    transition={{
-                      duration: 0.3, // Smooth transition for the effect
-                      ease: "easeInOut",
-                    }}
                   />
                 </div>
 
-                <div className="mb-3 w-full">
+                <div className="w-full mb-3">
                   <label
                     className="block font-medium mb-[2px] text-[#fc9170]"
                     htmlFor="phoneNumber"
                   >
                     Phone Number
                   </label>
-                  {/* Phone Input with custom hover styles */}
                   <PhoneInput
                     international
-                    defaultCountry="IN" // Optional, can change as needed
+                    defaultCountry="IN"
                     value={formData.phoneNumber}
                     onChange={(phone) =>
                       setFormData({ ...formData, phoneNumber: phone })
@@ -127,7 +123,8 @@ const ContactMeMain = () => {
                 </div>
               </div>
 
-              <div className="mb-3 w-full">
+              {/* Email */}
+              <div className="w-full mb-3">
                 <label
                   className="block font-medium mb-[2px] text-[#fc9170]"
                   htmlFor="email"
@@ -142,18 +139,11 @@ const ContactMeMain = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  whileHover={{
-                    borderColor: "white", // Border color turns white on hover
-                    boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)", // Adds a glowing effect
-                  }}
-                  transition={{
-                    duration: 0.3, // Smooth transition for the effect
-                    ease: "easeInOut",
-                  }}
                 />
               </div>
 
-              <div className="mb-3 w-full">
+              {/* Message */}
+              <div className="w-full mb-3">
                 <label
                   className="block font-medium mb-[2px] text-teal-700"
                   htmlFor="message"
@@ -166,17 +156,10 @@ const ContactMeMain = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your message here..."
-                  whileHover={{
-                    borderColor: "white", // Border color turns white on hover
-                    boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)", // Adds a glowing effect
-                  }}
-                  transition={{
-                    duration: 0.3, // Smooth transition for the effect
-                    ease: "easeInOut",
-                  }}
                 />
               </div>
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="inline-block w-full rounded bg-teal-400 px-6 py-2.5 font-medium uppercase leading-normal text-white hover:shadow-md hover:bg-teal-500"
