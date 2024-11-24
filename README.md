@@ -38,3 +38,5 @@
     ```bash
     npm run dev
     ```
+
+## Portfolio Website © 2024 by Prathamesh Prabhakar is licensed under CC BY-NC-ND 4.0 
