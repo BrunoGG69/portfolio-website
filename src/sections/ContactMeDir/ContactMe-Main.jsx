@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-number-input";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import "react-phone-number-input/style.css";
 
 const ContactMeMain = () => {

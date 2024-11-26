@@ -1,10 +1,12 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import ReactDOM from "react-dom/client";
+import "./index.css"; // This imports Tailwind CSS globally
+import App from "./App"; // The main app file
+import { BrowserRouter as Router } from "react-router-dom"; // Only wrap the app here
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+const rootElement = document.getElementById("root");
+
+ReactDOM.createRoot(rootElement).render(
+  <Router>
     <App />
-  </StrictMode>,
-)
+  </Router>,
+);

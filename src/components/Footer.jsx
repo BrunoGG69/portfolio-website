@@ -1,0 +1,34 @@
+const FooterMain = ({ profileImage, footerMessage, links }) => {
+  return (
+    <footer className="footer bg-black text-neutral-content p-10 font-jetbrains">
+      <aside className="grid-flow-col items-center">
+        <img src={profileImage} alt="Profile Picture" width={50} height={50} />
+        <p>
+          BrunoGG
+          <br />
+          <p>
+            Copyright © {new Date().getFullYear()} - {footerMessage}
+          </p>
+        </p>
+      </aside>
+      <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <h6 className="footer-title">Socials</h6>
+        <div className="grid grid-flow-col gap-4">
+          {links.map(({ href, icon, id }) => (
+            <a
+              href={href}
+              key={id}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform transform hover:scale-110 hover:font-bold"
+            >
+              <i className={`bx ${icon} bx-sm`}></i>
+            </a>
+          ))}
+        </div>
+      </nav>
+    </footer>
+  );
+};
+
+export default FooterMain;
