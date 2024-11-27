@@ -1,61 +1,33 @@
 import { useEffect, useState } from "react";
-import arduinoIcon from "/logos/arduino.svg";
-import awsIcon from "/logos/aws.svg";
-import cppIcon from "/logos/c++.svg";
-import cssIcon from "/logos/css.svg";
-import discordIcon from "/logos/discord.svg";
-import dockerIcon from "/logos/docker.svg";
-import figmaIcon from "/logos/figma.svg";
-import firebaseIcon from "/logos/firebase.svg";
-import gcloudIcon from "/logos/gcloud.svg";
-import gitIcon from "/logos/git.svg";
-import githubIcon from "/logos/github.svg";
-import htmlIcon from "/logos/html.svg";
-import jsIcon from "/logos/js.svg";
-import linuxIcon from "/logos/linux.svg";
-import nodejsIcon from "/logos/nodejs.svg";
-import npmIcon from "/logos/npm.svg";
-import pycharmIcon from "/logos/pycharm.svg";
-import pythonIcon from "/logos/python.svg";
-import raspberryIcon from "/logos/raspberry.svg";
-import vscodeIcon from "/logos/vscode.svg";
-import webstormIcon from "/logos/webstorm.svg";
-import windowsIcon from "/logos/windows.svg";
-import tailwindIcon from "/logos/tailwindcss.svg";
-import reactIcon from "/logos/react.svg";
-import reactNativeIcon from "/logos/reactNative.svg";
-import homeassistantIcon from "/logos/homeassistant.svg";
-
-
 import { techData } from "../../constants/index.js";
 
 const icons = [
-  arduinoIcon,
-  awsIcon,
-  cppIcon,
-  cssIcon,
-  discordIcon,
-  dockerIcon,
-  figmaIcon,
-  firebaseIcon,
-  gcloudIcon,
-  gitIcon,
-  githubIcon,
-  htmlIcon,
-  jsIcon,
-  linuxIcon,
-  nodejsIcon,
-  npmIcon,
-  pycharmIcon,
-  pythonIcon,
-  raspberryIcon,
-  vscodeIcon,
-  webstormIcon,
-  windowsIcon,
-  tailwindIcon,
-  reactIcon,
-  reactNativeIcon,
-  homeassistantIcon,
+  "https://brunogg69.github.io/icons/logos/arduino.svg",
+  "https://brunogg69.github.io/icons/logos/aws.svg",
+  "https://brunogg69.github.io/icons/logos/c++.svg",
+  "https://brunogg69.github.io/icons/logos/css.svg",
+  "https://brunogg69.github.io/icons/logos/discord.svg",
+  "https://brunogg69.github.io/icons/logos/docker.svg",
+  "https://brunogg69.github.io/icons/logos/figma.svg",
+  "https://brunogg69.github.io/icons/logos/firebase.svg",
+  "https://brunogg69.github.io/icons/logos/gcloud.svg",
+  "https://brunogg69.github.io/icons/logos/git.svg",
+  "https://brunogg69.github.io/icons/logos/github.svg",
+  "https://brunogg69.github.io/icons/logos/html.svg",
+  "https://brunogg69.github.io/icons/logos/js.svg",
+  "https://brunogg69.github.io/icons/logos/linux.svg",
+  "https://brunogg69.github.io/icons/logos/nodejs.svg",
+  "https://brunogg69.github.io/icons/logos/npm.svg",
+  "https://brunogg69.github.io/icons/logos/pycharm.svg",
+  "https://brunogg69.github.io/icons/logos/python.svg",
+  "https://brunogg69.github.io/icons/logos/raspberry.svg",
+  "https://brunogg69.github.io/icons/logos/vscode.svg",
+  "https://brunogg69.github.io/icons/logos/webstorm.svg",
+  "https://brunogg69.github.io/icons/logos/windows.svg",
+  "https://brunogg69.github.io/icons/logos/tailwindcss.svg",
+  "https://brunogg69.github.io/icons/logos/react.svg",
+  "https://brunogg69.github.io/icons/logos/reactNative.svg",
+  "https://brunogg69.github.io/icons/logos/homeassistant.svg",
 ];
 
 const TechStacksMain = () => {
@@ -115,7 +87,7 @@ const TechStacksMain = () => {
                     key={index}
                     src={icon}
                     alt="logo"
-                    className="w-12 h-12 md:w-16 md:h-16 object-contain max-w-none transition-transform duration-200 hover:scale-110"
+                    className="w-12 h-12 md:w-16 md:h-16 fill-white object-contain max-w-none transition-transform duration-200 hover:scale-110"
                 />
             ))}
           </div>

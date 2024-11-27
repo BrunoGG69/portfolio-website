@@ -1,11 +1,11 @@
 import { repoData } from "../../constants/index.js";
 import { motion } from "motion/react";
 
-import chatbot_image from "/repos/chatbot.svg";
-import joystick_image from "/repos/joystick.svg";
-import portfolio_image from "/repos/portfolio-website.svg";
-
-const icons = [chatbot_image, joystick_image, portfolio_image];
+const icons = [
+    "https://brunogg69.github.io/icons/repos/chatbot.svg",
+    "https://brunogg69.github.io/icons/repos/joystick.svg",
+    "https://brunogg69.github.io/icons/repos/portfolio-website.svg"
+];
 
 const ProjectsMain = () => {
   return (
