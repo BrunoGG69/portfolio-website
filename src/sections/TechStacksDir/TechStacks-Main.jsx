@@ -26,6 +26,7 @@ import reactIcon from "/logos/react.svg";
 import reactNativeIcon from "/logos/reactNative.svg";
 import homeassistantIcon from "/logos/homeassistant.svg";
 
+
 import { techData } from "../../constants/index.js";
 
 const icons = [
@@ -142,6 +143,7 @@ const TechStacksMain = () => {
           >
             {techData.map((tech) => (
                 <div
+                    key={tech.id}
                     id={tech.id}
                     className="tech-card bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#000000] flex-1 min-w-[300px] mx-auto p-4 rounded-xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform hover:brightness-125 min-h-[400px] flex flex-col justify-between snap-start"
                 >

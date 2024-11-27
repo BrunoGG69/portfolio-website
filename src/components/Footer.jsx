@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const FooterMain = ({ profileImage, footerMessage, links }) => {
   return (
     <footer className="footer bg-black text-neutral-content p-10 font-jetbrains">
@@ -29,6 +31,18 @@ const FooterMain = ({ profileImage, footerMessage, links }) => {
       </nav>
     </footer>
   );
+};
+
+FooterMain.propTypes = {
+  profileImage: PropTypes.string.isRequired,
+  footerMessage: PropTypes.string.isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      icon: PropTypes.string.isRequired,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    })
+  ).isRequired,
 };
 
 export default FooterMain;

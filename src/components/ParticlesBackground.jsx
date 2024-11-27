@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 const ParticlesBackground = ({ isMobile }) => {
   useEffect(() => {
@@ -43,6 +44,10 @@ const ParticlesBackground = ({ isMobile }) => {
   return !isMobile ? (
     <div id="particles-js" className="absolute inset-0 -z-10"></div>
   ) : null;
+};
+
+ParticlesBackground.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default ParticlesBackground;

@@ -81,7 +81,7 @@ const Nav = () => {
         className={`lg:hidden absolute top-16 right-4 bg-[#15141d] text-white p-4 rounded-lg ${isOpen ? "block" : "hidden"}`}
       >
         <ul className="menu">
-          {socialLinks.map(({ href, icon, label, id }) => (
+          {socialLinks.map(({ href, icon, id }) => (
             <li key={id}>
               <div className="rise-down">
                 <i className={`${icon} text-white`}></i>

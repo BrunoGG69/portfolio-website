@@ -81,14 +81,14 @@ const AboutMeMain = () => {
               <span>
                 My laziness led me to convert my room into a smart room,
                 controlled with just a touch of a button with automations that
-                would make anyone's life easier.
+                would make anyone&apos;s life easier.
               </span>
             </p>
             <br />
             <p>
               <span className="font-bold underline text-lg sm:text-xl lg:text-2xl">
                 I love taking things apart to understand how they work. My motto
-                is, "If it ain't broke, I'm going to mess with it anyway!"
+                is, &quot;If it ain&apos;t broke, I&apos;m going to mess with it anyway!&quot;
               </span>
             </p>
           </p>

@@ -138,6 +138,7 @@ export const techData = [
       "Simplified Development Environment",
     ],
   },
+
 ];
 
 export const repoData = [
