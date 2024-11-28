@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PhoneInput from "react-phone-number-input";
-import { motion } from "motion/react";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import { motion } from "framer-motion";
 import "react-phone-number-input/style.css";
 import useFormWebhook from "../hooks/formWebhook"; // Importing the form webhook handler
 
@@ -12,14 +12,43 @@ const ContactForm = () => {
         message: "",
     });
 
+    const [errors, setErrors] = useState({
+        phoneNumber: "",
+    });
+
     const { handleSubmit } = useFormWebhook(formData, setFormData); // Using the webhook handler
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     };
 
+    const handlePhoneChange = (phone) => {
+        if (phone && !isValidPhoneNumber(phone)) {
+            setErrors({ ...errors, phoneNumber: "Invalid phone number" });
+        } else {
+            setErrors({ ...errors, phoneNumber: "" });
+        }
+        setFormData({ ...formData, phoneNumber: phone });
+    };
+
+    const validateForm = () => {
+        const phoneValid = isValidPhoneNumber(formData.phoneNumber);
+        if (!phoneValid) {
+            setErrors({ ...errors, phoneNumber: "Please enter a valid phone number" });
+            return false;
+        }
+        return true;
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+            handleSubmit(e); // Pass to the existing webhook handler
+        }
+    };
+
     return (
-        <form className="w-full lg:w-6/12 px-6" onSubmit={handleSubmit}>
+        <form className="w-full lg:w-6/12 px-6" onSubmit={onSubmit}>
             <div className="flex flex-col gap-6">
                 {/* Name */}
                 <div className="flex flex-col gap-5 sm:flex-row sm:gap-4">
@@ -47,11 +76,16 @@ const ContactForm = () => {
                             international
                             defaultCountry="IN"
                             value={formData.phoneNumber}
-                            onChange={(phone) => setFormData({ ...formData, phoneNumber: phone })}
-                            className="phone-input px-4 py-2 border w-full outline-teal-400 rounded-lg focus:border-teal-400"
+                            onChange={handlePhoneChange}
+                            className={`phone-input px-4 py-2 border w-full outline-teal-400 rounded-lg focus:border-teal-400 ${
+                                errors.phoneNumber ? "border-red-500" : ""
+                            }`}
                             placeholder="Enter phone number"
                             required
                         />
+                        {errors.phoneNumber && (
+                            <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+                        )}
                     </div>
                 </div>
 
