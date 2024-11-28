@@ -20,27 +20,28 @@ const ProjectsMain = () => {
         </h2>
       </div>
 
-      {/* Repositories Grid */}
+      {/* Repositories */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 py-10 w-full">
         {repoData.map((repo) => (
           <motion.div
             key={repo.id}
-            className="bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#010101] rounded-xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform  p-6 flex flex-col justify-between"
+            className="bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#010101] rounded-3xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform  p-6 flex flex-col justify-between"
             whileHover={{
-              borderColor: "white", // Border color turns white on hover
-              boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)", // Adds a glowing effect
+              borderColor: "white",
+              boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)",
             }}
             transition={{
-              duration: 0.3, // Smooth transition for the effect
+              duration: 0.3,
               ease: "easeInOut",
             }}
           >
             {/* Repository Image */}
-            <div className="mb-4">
+            <div className="mb-4 transition-all hover:scale-105 hover:border-gray-600">
               <img
                 src={icons.find((icon) => icon.includes(repo.id))}
                 alt={`${repo.name} Preview`}
                 className="w-full h-48 object-cover rounded-xl"
+
               />
             </div>
 
@@ -56,10 +57,9 @@ const ProjectsMain = () => {
             </div>
 
             {/* Repository Link */}
-
             <button
               onClick={() => window.open(repo.link, "_blank")} // Open the link in a new tab
-              className="text-white bg-[#fb7070] focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mt-5 mb-2"
+              className="text-white bg-[#fa926f] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center me-2 mt-5 mb-2"
             >
               Go to Repository
             </button>

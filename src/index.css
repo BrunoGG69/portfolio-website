@@ -52,6 +52,11 @@
     text-shadow: 0 0 5px #ffffff, 0 0 8px #ffffff;
   }
 
+  .neon-wisteria {
+    color: #CB9CF2;
+    text-shadow: 0 0 5px #CB9CF2, 0 0 8px #CB9CF2;
+  }
+
   /* Blur Effects */
 }
 
@@ -148,5 +153,7 @@
     transform: translateX(calc(-100% / 3));
   }
 }
+
+
 
 

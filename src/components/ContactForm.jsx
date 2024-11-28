@@ -21,7 +21,7 @@ const ContactForm = () => {
     return (
         <form className="w-full lg:w-6/12 px-6" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
-                {/* Name & Phone Number */}
+                {/* Name */}
                 <div className="flex flex-col gap-5 sm:flex-row sm:gap-4">
                     <div className="w-full mb-3">
                         <label className="block font-medium mb-[2px] text-[#fc9170]" htmlFor="name">
@@ -38,6 +38,7 @@ const ContactForm = () => {
                         />
                     </div>
 
+                    {/* Phone Number */}
                     <div className="w-full mb-3">
                         <label className="block font-medium mb-[2px] text-[#fc9170]" htmlFor="phoneNumber">
                             Phone Number
@@ -61,7 +62,7 @@ const ContactForm = () => {
                     </label>
                     <motion.input
                         type="email"
-                        className="px-4 py-2 border w-full outline-none rounded-lg"
+                        className="px-4 py-2 border w-full outline-none rounded-lg focus:border-teal-400"
                         id="email"
                         placeholder="Enter your email address"
                         value={formData.email}
@@ -72,11 +73,11 @@ const ContactForm = () => {
 
                 {/* Message */}
                 <div className="w-full mb-3">
-                    <label className="block font-medium mb-[2px] text-teal-700" htmlFor="message">
+                    <label className="block font-medium mb-[2px] text-[#fc9170]" htmlFor="message">
                         Message
                     </label>
                     <motion.textarea
-                        className="px-4 py-4 border rounded-[5px] w-full outline-none h-64"
+                        className="px-4 py-4 border rounded-[5px] w-full outline-none h-64 focus:border-teal-400"
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
@@ -87,7 +88,7 @@ const ContactForm = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="inline-block w-full rounded bg-teal-400 px-6 py-2.5 font-medium uppercase leading-normal text-white hover:shadow-md hover:bg-teal-500"
+                    className="inline-block w-full rounded bg-teal-400 px-6 py-2.5 font-medium uppercase leading-normal text-white transition-all hover:shadow-md hover:bg-teal-500"
                 >
                     Send
                 </button>

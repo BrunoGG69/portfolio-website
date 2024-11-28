@@ -95,26 +95,6 @@ export const techData = [
     abilities: ["Responsive Web Design", "Theming", "Utility-based Styling"],
   },
   {
-    id: "html",
-    type: "Markup Language",
-    name: "HTML",
-    features: "Structure, Semantic Tags, Accessible",
-    specialty: "Building the Structure of Web Pages",
-    abilities: [
-      "Webpage Structure",
-      "SEO Optimization",
-      "Embedding Multimedia",
-    ],
-  },
-  {
-    id: "css",
-    type: "Style Sheet Language",
-    name: "CSS",
-    features: "Styling, Responsive Design, Flexible",
-    specialty: "Design and Layout of Web Pages",
-    abilities: ["Styling Web Pages", "Responsive Design", "Animations"],
-  },
-  {
     id: "homeassistant",
     type: "Platform",
     name: "Home Assistant",
@@ -137,6 +117,26 @@ export const techData = [
       "Scalable Application Deployment",
       "Simplified Development Environment",
     ],
+  },
+  {
+    id: "html",
+    type: "Markup Language",
+    name: "HTML",
+    features: "Structure, Semantic Tags, Accessible",
+    specialty: "Building the Structure of Web Pages",
+    abilities: [
+      "Webpage Structure",
+      "SEO Optimization",
+      "Embedding Multimedia",
+    ],
+  },
+  {
+    id: "css",
+    type: "Style Sheet Language",
+    name: "CSS",
+    features: "Styling, Responsive Design, Flexible",
+    specialty: "Design and Layout of Web Pages",
+    abilities: ["Styling Web Pages", "Responsive Design", "Animations"],
   },
 
 ];

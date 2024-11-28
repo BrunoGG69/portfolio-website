@@ -12,6 +12,7 @@ const ContactMeMain = () => {
             className="w-full lg:w-10/12 mb-32"
         >
           <div className="flex flex-col lg:flex-row">
+
             {/* Left Column: Text */}
             <div className="w-full lg:w-6/12 px-6 mb-8 lg:mb-0 flex items-center justify-center">
               <div className="text-center">
@@ -24,7 +25,7 @@ const ContactMeMain = () => {
             </div>
 
             {/* Right Column: Contact Form */}
-            <ContactForm /> {/* Using the ContactForm component */}
+            <ContactForm />
           </div>
         </motion.section>
       </div>
