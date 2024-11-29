@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import "react-phone-number-input/style.css";
-import useFormWebhook from "../hooks/formWebhook"; // Importing the form webhook handler
+import useFormWebhook from "../hooks/formWebhook";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -68,7 +68,7 @@ const ContactForm = () => {
                     </div>
 
                     {/* Phone Number */}
-                    <div className="w-full mb-3">
+                    <div className="w-full mb-3 focus:border-teal-400">
                         <label className="block font-medium mb-[2px] text-[#fc9170]" htmlFor="phoneNumber">
                             Phone Number
                         </label>
