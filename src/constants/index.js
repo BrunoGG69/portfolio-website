@@ -163,4 +163,11 @@ export const repoData = [
     technologies: ["React", "Tailwind CSS", "Flask", "Python"],
     link: "https://github.com/BrunoGG69/Wartex-Chatbot-JungleeParliament",
   },
+  {
+    id: "autoTyper",
+    name: "AutoTyper",
+    description: "An intelligent auto-typer which allows to type text automatically.",
+    technologies: ["Python"],
+    link: "https://github.com/BrunoGG69/Autotyper",
+  },
 ];

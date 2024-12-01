@@ -1,5 +1,6 @@
 import profilePic from "../../assets/profilePic-noBackground.png";
 import ReactTypingEffect from "react-typing-effect";
+import { motion } from "motion/react";
 
 const AboutMeMain = () => {
   return (
@@ -9,40 +10,47 @@ const AboutMeMain = () => {
         className="w-full md:w-2/5 flex justify-center md:justify-start items-center"
         style={{ animationDelay: "0.5s" }}
       >
-        <div className="z-10">
+        <motion.div
+          className="z-10"
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.2 },
+          }}
+        >
           <img
             src={profilePic}
             alt="Profile Picture"
             className="max-w-full h-auto"
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* About Me Text Section */}
-      <div className="w-full md:w-3/5 flex flex-col md:ml-8 mt-4 md:mt-0">
-        <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold neon-orange">
-          &lt;About Me&gt;
-        </h1>
-        <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold neon-blue mt-2">
-          &lt;
-          <ReactTypingEffect
-            text={[
-              "Student",
-              "Coder",
-              "Tinkerer",
-              "Innovator",
-              "3D Modeller",
-              "Software Developer",
-              "Web Developer",
-              "Learner",
-            ]}
-            speed={75}
-            eraseSpeed={50}
-            typingDelay={500}
-            eraseDelay={1000}
-          />
-          &gt;
-        </h1>
+      <div className="w-full md:w-3/5 flex flex-col md:ml-8 mt-4 md:mt-0 ">
+        <div className="transition-all hover:scale-110 hover:brightness-110 hover:translate-x-10">
+          <h1 className="headingText neon-orange">&lt;About Me&gt;</h1>
+
+          <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold neon-blue mt-2">
+            &lt;
+            <ReactTypingEffect
+              text={[
+                "Student",
+                "Coder",
+                "Tinkerer",
+                "Innovator",
+                "3D Modeller",
+                "Software Developer",
+                "Web Developer",
+                "Learner",
+              ]}
+              speed={75}
+              eraseSpeed={50}
+              typingDelay={500}
+              eraseDelay={1000}
+            />
+            &gt;
+          </h1>
+        </div>
         <div className="flex flex-col text-white pt-10 text-xl">
           <p className="gap-y-5 text-sm sm:text-lg lg:text-xl">
             <span>
@@ -88,7 +96,8 @@ const AboutMeMain = () => {
             <p>
               <span className="font-bold underline text-lg sm:text-xl lg:text-2xl">
                 I love taking things apart to understand how they work. My motto
-                is, &quot;If it ain&apos;t broke, I&apos;m going to mess with it anyway!&quot;
+                is, &quot;If it ain&apos;t broke, I&apos;m going to mess with it
+                anyway!&quot;
               </span>
             </p>
           </p>

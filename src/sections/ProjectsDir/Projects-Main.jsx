@@ -4,7 +4,8 @@ import { motion } from "motion/react";
 const icons = [
     "https://brunogg69.github.io/icons/repos/chatbot.svg",
     "https://brunogg69.github.io/icons/repos/joystick.svg",
-    "https://brunogg69.github.io/icons/repos/portfolio-website.svg"
+    "https://brunogg69.github.io/icons/repos/portfolio-website.svg",
+    "https://brunogg69.github.io/icons/repos/Autotyper.svg"
 ];
 
 const ProjectsMain = () => {
@@ -14,9 +15,9 @@ const ProjectsMain = () => {
       className="text-white items-center flex flex-col justify-center relative "
     >
       {/* Heading */}
-      <div className="flex flex-col items-center justify-center pb-10">
-        <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold neon-blue rise-up text-center">
-          &lt;My GitHub Repositories&gt;
+      <div className="heading">
+        <h2 className="headingText text-center neon-blue">
+          &lt;My Projects&gt;
         </h2>
       </div>
 
@@ -38,7 +39,7 @@ const ProjectsMain = () => {
             {/* Repository Image */}
             <div className="mb-4 transition-all hover:scale-105 hover:border-gray-600">
               <img
-                src={icons.find((icon) => icon.includes(repo.id))}
+                src={icons.find((icon) => icon.toLowerCase().includes(repo.id.toLowerCase()))}
                 alt={`${repo.name} Preview`}
                 className="w-full h-48 object-cover rounded-xl"
 

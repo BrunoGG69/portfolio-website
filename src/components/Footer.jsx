@@ -16,15 +16,15 @@ const FooterMain = ({ profileImage, footerMessage, links }) => {
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
         <h6 className="footer-title">Socials</h6>
         <div className="grid grid-flow-col gap-4">
-          {links.map(({ href, icon, id }) => (
+          {links.map(( socialLinks ) => (
             <a
-              href={href}
-              key={id}
+              href={socialLinks.href}
+              key={socialLinks.id}
               target="_blank"
               rel="noopener noreferrer"
               className="transition-transform transform hover:scale-110 hover:font-bold"
             >
-              <i className={`bx ${icon} bx-sm`}></i>
+              <i className={`bx ${socialLinks.icon} bx-sm`}></i>
             </a>
           ))}
         </div>

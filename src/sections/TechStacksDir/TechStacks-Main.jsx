@@ -74,9 +74,9 @@ const TechStacksMain = () => {
           className="text-white items-center flex flex-col justify-center overflow-hidden relative pt-10"
       >
         {/* Heading */}
-        <div className="flex flex-col items-center justify-center pb-10">
-          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold neon-blue rise-up text-center">
-            &lt;Languages and Tools I am Familiar With&gt;
+        <div className="heading">
+          <h2 className="headingText neon-blue">
+            &lt;My Tech Proficiencies&gt;
           </h2>
         </div>
 
