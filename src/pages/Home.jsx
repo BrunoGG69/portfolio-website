@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import {
-  HeroMain,
-  TechStacksMain,
-  ProjectsMain,
-  ContactMeMain,
   AboutMeMain,
+  ContactMeMain,
   FooterMain,
+  HeroMain,
+  ProjectsMain,
+  TechStacksMain,
 } from "../sections";
 import { Nav, ParticlesBackground } from "../components";
 import useMobileDetection from "../hooks/useMobileDetection";
