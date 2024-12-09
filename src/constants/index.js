@@ -146,8 +146,28 @@ export const repoData = [
     id: "chatbot",
     name: "Chatbot Project",
     description: "An interactive chatbot built with React and Flask.",
-    technologies: ["React", "Tailwind CSS", "Flask", "Python"],
+    technologies: ["React", "TailwindCSS", "Flask", "Python"],
     link: "https://github.com/BrunoGG69/Wartex-Chatbot-JungleeParliament",
+    ifDemo: true,
+    demoLink: "https://chatbot.brunogg.in",
+  },
+  {
+    id: "portfolio-website",
+    name: "Portfolio Website",
+    description: "My Personal Portfolio website, designed to showcase my skills, projects, and experience. ",
+    technologies: ["JS", "React", "TailwindCSS"],
+    link: "https://github.com/BrunoGG69/portfolio-website",
+    ifDemo: true,
+    demoLink: "https://www.brunogg.in",
+  },
+  {
+    id: "BankApp",
+    name: "BrunoPay - For Coders, By Coders",
+    description: "It is a mock website for a Credit card Called BrunoPay",
+    technologies: ["JS", "React", "TailwindCSS"],
+    link: "https://github.com/BrunoGG69/portfolio-website",
+    ifDemo: true,
+    demoLink: "https://pay.brunogg.in",
   },
   {
     id: "joystick",
@@ -155,13 +175,7 @@ export const repoData = [
     description: "A cheap joystick for controlling PC games.",
     technologies: ["Python", "Arduino"],
     link: "https://github.com/BrunoGG69/PC-Joystick",
-  },
-  {
-    id: "portfolio",
-    name: "Portfolio Website",
-    description: "My Personal Portfolio website, designed to showcase my skills, projects, and experience. ",
-    technologies: ["Javascript", "React", "Tailwind CSS"],
-    link: "https://github.com/BrunoGG69/portfolio-website",
+    ifDemo: false,
   },
   {
     id: "autoTyper",
@@ -169,6 +183,7 @@ export const repoData = [
     description: "An intelligent auto-typer which allows to type text automatically.",
     technologies: ["Python"],
     link: "https://github.com/BrunoGG69/Autotyper",
+    ifDemo: false,
   },
 ];
 
@@ -215,5 +230,13 @@ export const timelineData = [
         "I started my exploration of web development by plunging into making dynamic websites. I already knew a little about HTML and CSS, but really wanted to level up the skills by picking up React. To see what I could do, I built my own portfolio website. And I checked out Tailwind CSS, which really made my CSS workflow much easier and faster.",
     align: "start",
   },
+];
+
+export const navItems = [
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#aboutMe" },
+  { label: "Tech Stacks", href: "#techStacks" },
+  { label: "My Projects", href: "#projects" },
+  { label: "Contact Me", href: "#contactMe" },
 ];
 

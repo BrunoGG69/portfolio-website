@@ -58,7 +58,7 @@ const ContactForm = () => {
                         </label>
                         <motion.input
                             type="text"
-                            className="px-4 py-2 border w-full outline-none rounded-lg focus:border-teal-400"
+                            className="px-6 py-2 border w-full outline-none rounded-full focus:border-teal-400"
                             id="name"
                             placeholder="Your Name"
                             value={formData.name}
@@ -77,7 +77,7 @@ const ContactForm = () => {
                             defaultCountry="IN"
                             value={formData.phoneNumber}
                             onChange={handlePhoneChange}
-                            className={`phone-input px-4 py-2 border w-full outline-teal-400 rounded-lg focus:border-teal-400 ${
+                            className={`phone-input px-6 py-2 border w-full outline-teal-400 rounded-full focus:border-teal-400 ${
                                 errors.phoneNumber ? "border-red-500" : ""
                             }`}
                             placeholder="Enter phone number"
@@ -96,7 +96,7 @@ const ContactForm = () => {
                     </label>
                     <motion.input
                         type="email"
-                        className="px-4 py-2 border w-full outline-none rounded-lg focus:border-teal-400"
+                        className="px-6 py-2 border w-full outline-none rounded-full focus:border-teal-400"
                         id="email"
                         placeholder="Enter your email address"
                         value={formData.email}
@@ -111,7 +111,7 @@ const ContactForm = () => {
                         Message
                     </label>
                     <motion.textarea
-                        className="px-4 py-4 border rounded-[5px] w-full outline-none h-64 focus:border-teal-400"
+                        className="px-6 py-4 border rounded-[25px] w-full outline-none h-64 focus:border-teal-400"
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
@@ -122,7 +122,7 @@ const ContactForm = () => {
                 {/* Submit Button */}
                 <button
                     type="submit"
-                    className="inline-block w-full rounded bg-teal-400 px-6 py-2.5 font-medium uppercase leading-normal text-white transition-all hover:shadow-md hover:bg-teal-500"
+                    className="inline-block w-full rounded-full bg-teal-400 px-6 py-2.5 font-medium uppercase leading-normal text-white transition-all hover:shadow-md hover:bg-teal-500"
                 >
                     Send
                 </button>

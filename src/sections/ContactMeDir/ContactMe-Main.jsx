@@ -3,7 +3,7 @@ import { ContactForm } from "../../components"; // Importing the form component
 
 const ContactMeMain = () => {
   return (
-    <div className="flex items-center justify-center px-4 py-4">
+    <div  id="contactMe" className="flex items-center justify-center px-4 py-4">
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

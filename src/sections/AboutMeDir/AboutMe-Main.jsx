@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AboutMeMain = () => {
     return (
         <div
-            id="about-me"
+            id="aboutMe"
             className="flex flex-col md:flex-row justify-center items-center min-h-screen"
         >
             <div
@@ -84,7 +84,7 @@ const AboutMeMain = () => {
                     <div className="mt-8 flex ">
                         <Link
                             to="/more-about-me"
-                            className="bg-[#5ec6bb] text-white py-2 px-6 rounded-lg text-xl font-bold hover:bg-[#4fb29b] transition duration-300"
+                            className="bg-[#5ec6bb] text-white py-2 px-6 rounded-full text-xl font-bold hover:bg-[#4fb29b] transition duration-300"
                         >
                             Learn More About Me
                         </Link>

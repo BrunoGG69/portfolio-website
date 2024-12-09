@@ -9,7 +9,7 @@ const FooterMain = () => {
     links: socialLinks,
   };
   return (
-    <div>
+    <div id="footer">
       <Footer
         profileImage={footerContent.profileImage}
         footerMessage={footerContent.Message}
