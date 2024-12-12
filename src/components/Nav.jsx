@@ -25,7 +25,7 @@ const Nav = () => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        {location.pathname !== "/more-about-me" && (
+        {location.pathname === "/" && (
           <img
             src={profilePic}
             alt="Profile"
@@ -33,7 +33,7 @@ const Nav = () => {
           />
         )}
 
-        {location.pathname === "/more-about-me" ? (
+        {location.pathname !== "/" ? (
           <span className="text-2xl font-bold">
             <Link to="/" className="flex items-center text-white">
               <i

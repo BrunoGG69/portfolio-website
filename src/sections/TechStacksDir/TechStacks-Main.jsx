@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { techData } from "../../constants/index.js";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
 
 const icons = [
   "https://brunogg69.github.io/icons/logos/arduino.svg",
@@ -33,6 +34,7 @@ const icons = [
 
 const TechStacksMain = () => {
   const [scrollPosition, setScrollPosition] = useState("start");
+  const navigate = useNavigate();
 
   const scroll = (direction) => {
     const container = document.getElementById("scrollable-cards-container");
@@ -94,12 +96,13 @@ const TechStacksMain = () => {
           </div>
         </div>
 
-
         {/* Scrollable Cards Section */}
         <div className="relative w-full mt-8">
           {/* Left Scroll Button */}
           <div
-              className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-10 ${scrollPosition === "start" ? "hidden" : ""}`}
+              className={`absolute left-0 top-1/2 transform -translate-y-1/2 z-10 ${
+                  scrollPosition === "start" ? "hidden" : ""
+              }`}
           >
             <button
                 onClick={() => scroll("left")}
@@ -127,6 +130,7 @@ const TechStacksMain = () => {
                       duration: 0.3,
                       ease: "easeInOut",
                     }}
+                    onClick={() => navigate(`/${tech.id}`)}
                 >
                   <div className="relative flex flex-col items-center">
                     <div className="relative flex items-center justify-center mb-4">
@@ -156,13 +160,13 @@ const TechStacksMain = () => {
                   </div>
                 </motion.div>
             ))}
-
-
           </div>
 
           {/* Right Scroll Button */}
           <div
-              className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-10 ${scrollPosition === "end" ? "hidden" : ""}`}
+              className={`absolute right-0 top-1/2 transform -translate-y-1/2 z-10 ${
+                  scrollPosition === "end" ? "hidden" : ""
+              }`}
           >
             <button
                 onClick={() => scroll("right")}
@@ -177,4 +181,3 @@ const TechStacksMain = () => {
 };
 
 export default TechStacksMain;
-
