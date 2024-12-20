@@ -145,7 +145,7 @@ export const repoData = [
   {
     id: "chatbot",
     name: "Chatbot Project",
-    description: "An interactive chatbot built with React and Flask.",
+    description: "This is a custom chatbot application built with React + Python featuring a unique UI with Preset Prompts, Formatted responses with Bullet Points and Bold Styling.",
     technologies: ["React", "TailwindCSS", "Flask", "Python"],
     link: "https://github.com/BrunoGG69/Wartex-Chatbot-JungleeParliament",
     ifDemo: true,
@@ -154,7 +154,7 @@ export const repoData = [
   {
     id: "portfolio-website",
     name: "Portfolio Website",
-    description: "My Personal Portfolio website, designed to showcase my skills, projects, and experience. ",
+    description: "This is my personal portfolio website. It features a Hero Section with my username, key points, and a contact button, an About Section with my skills, a Tech Stacks section showcasing my experience with languages, platforms, and tools, a Projects section with my work, an Achievements page, a Contact Form connected to a Discord bot for direct contact, and a sleek footer with links to my social media profiles.",
     technologies: ["JS", "React", "TailwindCSS"],
     link: "https://github.com/BrunoGG69/portfolio-website",
     ifDemo: true,
@@ -163,16 +163,26 @@ export const repoData = [
   {
     id: "BankApp",
     name: "BrunoPay - For Coders, By Coders",
-    description: "It is a mock website for a Credit card Called BrunoPay",
+    description: "BrunoPay is a mock credit card website designed for developers. It simulates the features of a digital payment platform, providing a user-friendly interface for managing virtual cards, tracking balances, and making secure payments, all with a modern and responsive design.",
     technologies: ["JS", "React", "TailwindCSS"],
     link: "https://github.com/BrunoGG69/portfolio-website",
     ifDemo: true,
-    demoLink: "https://pay.brunogg.in",
+    demoLink: "https://pay.brunogg.in"
+  },
+
+  {
+    id: "BrunoWave",
+    name: "BrunoWave",
+    description: "BrunoWave is a mock music service website landing page. Its designed for all those BrainRot And Skibidi Tracks :D.",
+    technologies: ["JS", "React", "TailwindCSS"],
+    link: "https://github.com/BrunoGG69/BrunoWave",
+    ifDemo: true,
+    demoLink: "https://wave.brunogg.in"
   },
   {
     id: "joystick",
     name: "PC Joystick",
-    description: "A cheap joystick for controlling PC games.",
+    description: "The PC Joystick is a simple and budget-friendly device for controlling PC games. Built using Arduino, it showcases how to create a functional joystick using affordable components. This project is ideal for those interested in exploring hardware programming and custom gaming controllers",
     technologies: ["Python", "Arduino"],
     link: "https://github.com/BrunoGG69/PC-Joystick",
     ifDemo: false,
@@ -180,11 +190,12 @@ export const repoData = [
   {
     id: "autoTyper",
     name: "AutoTyper",
-    description: "An intelligent auto-typer which allows to type text automatically.",
+    description: "AutoTyper is a handy script that allows you to automate typing any text of your choice. You can customize the interval between key presses and set the number of repetitions, making it perfect for repetitive typing tasks.",
     technologies: ["Python"],
     link: "https://github.com/BrunoGG69/Autotyper",
     ifDemo: false,
-  },
+  }
+
 ];
 
 export const timelineData = [

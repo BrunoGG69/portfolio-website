@@ -1,5 +1,5 @@
 import { repoData } from "../../constants/index.js";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 
 const icons = [
@@ -13,6 +13,8 @@ const icons = [
     "https://brunogg69.github.io/icons/repos/joystickPreview.png",
     "https://brunogg69.github.io/icons/repos/Autotyper.svg",
     "https://brunogg69.github.io/icons/repos/AutotyperPreview.png",
+    "https://brunogg69.github.io/icons/repos/BrunoWave.svg",
+    "https://brunogg69.github.io/icons/repos/BrunoWavePreview.png",
 ];
 
 const logos = [
@@ -47,37 +49,38 @@ const logos = [
 
 const ProjectsMain = () => {
     const [hoveredRepo, setHoveredRepo] = useState(null);
+    const [selectedRepo, setSelectedRepo] = useState(null);
+
+    const closeModal = () => {
+        setSelectedRepo(null);
+    };
 
     return (
         <div
             id="projects"
             className="flex justify-center items-center min-h-screen"
         >
-            {/* Box around the content */}
-            <div
-                className="flex flex-col justify-center items-center min-h-screen w-[95%] md:w-[90%] bg-[#15151b] border-2 border-[#5ec6bb] rounded-3xl p-8 shadow-lg mt-10" // Added mt-10 for margin above the box
-            >
-                {/* Heading */}
-                <div className="heading mt-10"> {/* Added mt-10 for margin above the text */}
+            <div className="flex flex-col justify-center items-center min-h-screen w-[95%] md:w-[90%] bg-[#15151b] border-2 border-[#5ec6bb] rounded-3xl p-8 shadow-lg mt-10">
+                <div className="heading mt-10">
                     <h2 className="headingText text-center neon-blue">
                         &lt;My Projects&gt;
                     </h2>
                 </div>
 
-                {/* Repositories */}
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 px-5 py-10 w-full">
                     {repoData.map((repo) => {
+
                         const defaultImage = icons.find((icon) =>
-                            icon.toLowerCase().includes(repo.id.toLowerCase())
+                            icon.toLowerCase().includes(repo.id.toLowerCase()),
                         );
                         const previewImage = icons.find((icon) =>
-                            icon.toLowerCase().includes(`${repo.id.toLowerCase()}preview`)
+                            icon.toLowerCase().includes(`${repo.id.toLowerCase()}preview`),
                         );
 
                         return (
                             <motion.div
                                 key={repo.id}
-                                className="bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#010101] rounded-3xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform p-6 flex flex-col justify-between h-full"
+                                className="bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#010101] rounded-3xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform p-6 flex flex-col justify-between h-full relative"
                                 whileHover={{
                                     borderColor: "white",
                                     boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)",
@@ -86,11 +89,11 @@ const ProjectsMain = () => {
                                     duration: 0.3,
                                     ease: "easeInOut",
                                 }}
-                                onMouseEnter={() => setHoveredRepo(repo.id)}
-                                onMouseLeave={() => setHoveredRepo(null)}
+                                onMouseEnter={() => setHoveredRepo(repo.id)} // Set hovered repo on mouse enter
+                                onMouseLeave={() => setHoveredRepo(null)} // Reset hovered repo on mouse leave
+                                onClick={() => setSelectedRepo(repo)} // Set the selected repo when clicked
                             >
-                                {/* Repository Image */}
-                                <div className="mb-4 relative w-full h-48 rounded-xl overflow-hidden">
+                                <div className="mb-4 relative w-full h-56 rounded-xl overflow-hidden">
                                     <img
                                         src={defaultImage}
                                         alt={`${repo.name} Default`}
@@ -103,14 +106,14 @@ const ProjectsMain = () => {
                                     />
                                 </div>
 
-                                {/* Repository Details */}
                                 <div className="flex-grow">
-                                    <h3 className="text-xl font-bold underline mb-2">{repo.name}</h3>
-                                    <p className="text-gray-400 mb-4">{repo.description}</p>
+                                    <h3 className="text-xl font-bold text-center underline mb-2">
+                                        {repo.name}
+                                    </h3>
                                     <div className="flex flex-wrap gap-2 justify-center">
                                         {repo.technologies.map((tech, index) => {
                                             const logo = logos.find((logo) =>
-                                                logo.toLowerCase().includes(tech.toLowerCase())
+                                                logo.toLowerCase().includes(tech.toLowerCase()),
                                             );
                                             return logo ? (
                                                 <img
@@ -125,39 +128,119 @@ const ProjectsMain = () => {
                                                     key={index}
                                                     className="text-gray-400 italic text-sm"
                                                 >
-                                                    {tech}
-                                                </span>
+                            {tech}
+                          </span>
                                             );
                                         })}
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row gap-2 items-center justify-between w-fulll mt-4">
-                                    {/* Repository Link */}
-                                    <button
-                                        onClick={() => window.open(repo.link, "_blank")}
-                                        className="w-full sm:flex-grow text-white bg-[#fa926f] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center"
+                                {hoveredRepo === repo.id && (
+                                    <motion.div
+                                        className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 text-white text-lg font-semibold rounded-xl"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
                                     >
-                                        Go to Repository
-                                    </button>
-
-                                    {/* Demo Button */}
-                                    {repo.ifDemo && (
-                                        <button
-                                            onClick={() => window.open(repo.demoLink, "_blank")}
-                                            className="w-full sm:flex-grow text-white bg-[#5dc5bb] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center mt-3 sm:mt-0"
-                                        >
-                                            Go to Demo Link
-                                        </button>
-                                    )}
-                                </div>
+                                        Click for more info
+                                    </motion.div>
+                                )}
                             </motion.div>
                         );
                     })}
                 </div>
             </div>
+
+            <AnimatePresence>
+                {selectedRepo && (
+                    <motion.dialog
+                        open
+                        className="modal backdrop-blur-xl"
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) {
+                                closeModal();
+                            }
+                        }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <motion.div
+                            className="modal-box bg-[#15151b] border-2 border-[#9067c6] text-white max-w-4xl w-[90%] sm:w-3/5 h-[80vh] p-8 rounded-3xl flex flex-col shadow-2xl"
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.8 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <div className="mb-4 relative w-full h-96 rounded-xl overflow-hidden">
+                                <img
+                                    src={icons.find((icon) =>
+                                        icon
+                                            .toLowerCase()
+                                            .includes(`${selectedRepo.id.toLowerCase()}preview`),
+                                    )}
+                                    alt={`${selectedRepo.name} Preview`}
+                                    className="absolute inset-0 w-full h-full object-cover rounded-xl transition-opacity duration-300"
+                                />
+                            </div>
+                            <h3 className="text-2xl font-bold">{selectedRepo.name}</h3>
+                            <p className="py-4">{selectedRepo.description}</p>
+                            <div className="flex-grow"></div>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {selectedRepo.technologies.map((tech, index) => {
+                                    const logo = logos.find((logo) =>
+                                        logo.toLowerCase().includes(tech.toLowerCase()),
+                                    );
+                                    return logo ? (
+                                        <img
+                                            key={index}
+                                            src={logo}
+                                            alt={`${tech} Logo`}
+                                            className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                                            title={tech}
+                                        />
+                                    ) : (
+                                        <span
+                                            key={index}
+                                            className="text-gray-400 italic text-sm"
+                                        >
+                        {tech}
+                      </span>
+                                    );
+                                })}
+                            </div>
+
+                            <div className="flex flex-col sm:flex-row gap-2 items-center justify-between w-full mt-4">
+                                <button
+                                    onClick={() => window.open(selectedRepo.link, "_blank")}
+                                    className="w-full sm:flex-grow text-white bg-[#fa926f] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center"
+                                >
+                                    Go to Repository
+                                </button>
+
+                                {selectedRepo.ifDemo && (
+                                    <button
+                                        onClick={() =>
+                                            window.open(selectedRepo.demoLink, "_blank")
+                                        }
+                                        className="w-full sm:flex-grow text-white bg-[#5dc5bb] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center mt-3 sm:mt-0"
+                                    >
+                                        Go to Demo Link
+                                    </button>
+                                )}
+                            </div>
+                        </motion.div>
+                    </motion.dialog>
+                )}
+            </AnimatePresence>
         </div>
     );
 };
 
 export default ProjectsMain;
+
+
+
+
