@@ -42,7 +42,7 @@ const ParticlesBackground = ({ isMobile }) => {
   }, [isMobile]);
 
   return !isMobile ? (
-    <div id="particles-js" className="absolute inset-0 -z-10"></div>
+      <div id="particles-js" className="absolute inset-0 -z-10"></div>
   ) : null;
 };
 

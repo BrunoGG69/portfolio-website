@@ -40,3 +40,11 @@
     ```
 
 ## Portfolio Website © 2024 by Prathamesh Prabhakar is licensed under CC BY-NC-ND 4.0 
+# Disclaimer
+
+This project development was **Aided** by AI tools, specifically:
+
+* **GitHub Copilot:** For mild code suggestions.
+* **ChatGPT:** For aiding in repetitive tasks and code cleanup.
+
+However, the design and implementation of the project are entirely original and based on the resources listed above.

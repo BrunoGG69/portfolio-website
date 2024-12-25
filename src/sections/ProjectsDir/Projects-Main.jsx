@@ -1,6 +1,8 @@
 import { repoData } from "../../constants/index.js";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import CustomButtonOrange from "../../components/CustomButtonOrange.jsx";
+import CustomButtonBlue from "../../components/CustomButtonBlue.jsx";
 
 const icons = [
     "https://brunogg69.github.io/icons/repos/chatbot.svg",
@@ -80,7 +82,7 @@ const ProjectsMain = () => {
                         return (
                             <motion.div
                                 key={repo.id}
-                                className="bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#010101] rounded-3xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform p-6 flex flex-col justify-between h-full relative"
+                                className="bg-gradient-to-b from-[#15151b] via-[#15151b] to-[#010101] rounded-3xl shadow-lg border border-gray-700 transition-all hover:scale-105 hover:border-gray-600 transform p-6 flex flex-col justify-between h-full relative overflow-hidden"
                                 whileHover={{
                                     borderColor: "white",
                                     boxShadow: "0 0 10px 2px rgba(255, 255, 255, 0.7)",
@@ -120,7 +122,7 @@ const ProjectsMain = () => {
                                                     key={index}
                                                     src={logo}
                                                     alt={`${tech} Logo`}
-                                                    className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                                                    className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-full"
                                                     title={tech}
                                                 />
                                             ) : (
@@ -128,8 +130,8 @@ const ProjectsMain = () => {
                                                     key={index}
                                                     className="text-gray-400 italic text-sm"
                                                 >
-                            {tech}
-                          </span>
+                        {tech}
+                    </span>
                                             );
                                         })}
                                     </div>
@@ -138,10 +140,10 @@ const ProjectsMain = () => {
                                 {hoveredRepo === repo.id && (
                                     <motion.div
                                         className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 text-white text-lg font-semibold rounded-xl"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        exit={{opacity: 0}}
+                                        transition={{duration: 0.3}}
                                     >
                                         Click for more info
                                     </motion.div>
@@ -162,17 +164,17 @@ const ProjectsMain = () => {
                                 closeModal();
                             }
                         }}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        transition={{duration: 0.3}}
                     >
                         <motion.div
                             className="modal-box bg-[#15151b] border-2 border-[#9067c6] text-white max-w-4xl w-[90%] sm:w-3/5 h-[80vh] p-8 rounded-3xl flex flex-col shadow-2xl"
-                            initial={{ scale: 0.8 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.8 }}
-                            transition={{ duration: 0.3 }}
+                            initial={{scale: 0.8}}
+                            animate={{scale: 1}}
+                            exit={{scale: 0.8}}
+                            transition={{duration: 0.3}}
                         >
                             <div className="mb-4 relative w-full h-96 rounded-xl overflow-hidden">
                                 <img
@@ -212,25 +214,23 @@ const ProjectsMain = () => {
                                 })}
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-2 items-center justify-between w-full mt-4">
-                                <button
-                                    onClick={() => window.open(selectedRepo.link, "_blank")}
-                                    className="w-full sm:flex-grow text-white bg-[#fa926f] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center"
-                                >
-                                    Go to Repository
-                                </button>
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-5 w-full">
+                                <CustomButtonOrange
+                                    href={selectedRepo.link}
+                                    label="Go to Repository"
+                                    colorClass="bg-[#fa926f]"
+                                />
 
                                 {selectedRepo.ifDemo && (
-                                    <button
-                                        onClick={() =>
-                                            window.open(selectedRepo.demoLink, "_blank")
-                                        }
-                                        className="w-full sm:flex-grow text-white bg-[#5dc5bb] focus:outline-none font-medium rounded-3xl text-sm px-5 py-2.5 text-center mt-3 sm:mt-0"
-                                    >
-                                        Go to Demo Link
-                                    </button>
+                                    <CustomButtonBlue
+                                        href={selectedRepo.demoLink}
+                                        label="Go to Demo Link"
+                                        colorClass="bg-[#5dc5bb]"
+
+                                    />
                                 )}
                             </div>
+
                         </motion.div>
                     </motion.dialog>
                 )}
